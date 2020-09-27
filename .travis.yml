@@ -51,4 +51,4 @@ script:
 - install_run $PLAT
 after_success:
 # - pip install https://hg.reportlab.com/hg-public/rl-ci-tools/archive/tip.tar.gz -U
-- python -mrl_ci_tools upload-caches --subdir="$RLCACHE" --verbosity=1 ${TRAVIS_BUILD_DIR}/wheelhouse/*
+# - python -mrl_ci_tools upload-caches --subdir="$RLCACHE" --verbosity=1 ${TRAVIS_BUILD_DIR}/wheelhouse/*
