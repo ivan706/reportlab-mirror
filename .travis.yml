@@ -33,69 +33,8 @@ jobs:
   include:
   - os: linux
     env:
-    - UNICODE_WIDTH=16
-    - MB_PYTHON_VERSION=2.7
-  - os: linux
-    env:
-    - UNICODE_WIDTH=16
-    - MB_PYTHON_VERSION=2.7
-    - PLAT=i686
-  - os: linux
-    env:
-    - MB_PYTHON_VERSION=2.7
-  - os: linux
-    env:
-    - MB_PYTHON_VERSION=2.7
-    - PLAT=i686
-  - os: linux
-    env:
-    - MB_PYTHON_VERSION=3.5
-  - os: linux
-    env:
-    - MB_PYTHON_VERSION=3.5
-    - PLAT=i686
-  - os: linux
-    env:
-    - MB_PYTHON_VERSION=3.6
-  - os: linux
-    env:
-    - MB_PYTHON_VERSION=3.6
-    - PLAT=i686
-  - os: linux
-    env:
     - MB_PYTHON_VERSION=3.7
-  - os: linux
-    env:
-    - MB_PYTHON_VERSION=3.7
-    - PLAT=i686
-  - os: linux
-    env:
-    - MB_PYTHON_VERSION=3.8
-  - os: linux
-    env:
-    - MB_PYTHON_VERSION=3.8
-    - PLAT=i686
-  - os: osx
-    language: generic
-    env:
-    - MB_PYTHON_VERSION=2.7
-  - os: osx
-    language: generic
-    env:
-    - MB_PYTHON_VERSION=3.5
-  - os: osx
-    language: generic
-    env:
-    - MB_PYTHON_VERSION=3.6
-  - os: osx
-    language: generic
-    env:
-    - MB_PYTHON_VERSION=3.7
-  - os: osx
-    language: generic
-    env:
-    - MB_PYTHON_VERSION=3.8
-    - MB_PYTHON_OSX_VER=10.9
+  
 before_install:
 - git clone https://github.com/matthew-brett/multibuild $MULTIBUILD_DIR
 - cd $MULTIBUILD_DIR
@@ -111,5 +50,5 @@ install:
 script:
 - install_run $PLAT
 after_success:
-- pip install https://hg.reportlab.com/hg-public/rl-ci-tools/archive/tip.tar.gz -U
+# - pip install https://hg.reportlab.com/hg-public/rl-ci-tools/archive/tip.tar.gz -U
 - python -mrl_ci_tools upload-caches --subdir="$RLCACHE" --verbosity=1 ${TRAVIS_BUILD_DIR}/wheelhouse/*
